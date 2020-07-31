@@ -1,0 +1,78 @@
+﻿<mah:MetroWindow x:Class="DronTaxi.UI.Windows.AuthWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:DronTaxi.UI.Windows"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 mc:Ignorable="d"
+                 Title="AuthWindow" Height="625" Width="1144" ResizeMode="NoResize" BorderThickness="0"
+                 ShowTitleBar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style TargetType="TextBox" BasedOn="{StaticResource MahApps.Styles.TextBox}">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+            </Style>
+            <Style TargetType="PasswordBox" BasedOn="{StaticResource MahApps.Styles.PasswordBox}">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+            </Style>
+            <Style TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button}">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Grid.RowSpan="11" Stretch="Fill"
+               Source="/DronTaxi;component/Resources/flying-taxi.jpg" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Grid.RowSpan="11" Fill="#800080" Opacity="0.5" />
+        <svgc:SvgViewbox Grid.Row="0" Grid.Column="0" Margin="5" Source="/DronTaxi;component/Icons/Logo Dron Taxi.svg" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="DRON TAXI" FontSize="16" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="АВТОРИЗАЦИЯ" FontSize="14"
+                   FontWeight="SemiBold" />
+        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,5,5,0" Text="Логин" />
+        <TextBox x:Name="TextBoxLogin" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                 mah:TextBoxHelper.Watermark="Введите логин" />
+        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,5,5,0" Text="Пароль" />
+        <PasswordBox x:Name="PasswordBox" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"
+                     mah:TextBoxHelper.Watermark="Введите пароль"
+                     mah:PasswordBoxHelper.RevealButtonContent="True" />
+        <CheckBox x:Name="CheckBoxRemember" Grid.Row="7" Grid.Column="1" Margin="5">
+            <TextBlock Margin="0" Text="Запомнить" />
+        </CheckBox>
+        <Button x:Name="ButtonEnter" Grid.Row="7" Grid.Column="2" BorderThickness="2" BorderBrush="#FFFFFF"
+                Background="#00BFFF" Click="ButtonEnter_OnClick">
+            <TextBlock Margin="0" FontSize="12" FontWeight="SemiBold" Text="Войти" />
+        </Button>
+        <TextBlock x:Name="TextBlockError" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8" TextWrapping="Wrap" FontWeight="SemiBold" Visibility="Collapsed"/>
+    </Grid>
+</mah:MetroWindow>
